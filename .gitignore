@@ -1,0 +1,7 @@
+data/
+local_data/
+*.csv
+*.parquet
+outputs/
+*.ckpt
+*.pkl
