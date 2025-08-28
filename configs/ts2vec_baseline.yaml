@@ -11,6 +11,11 @@ data:
   stride: 16
   target_h: 12
 
+  #Entropy filtering setting
+  entropy_filtering: True
+  entropy_q = 0.7
+  entropy_bins: 11
+
 model:
   hidden_dim: 256
   proj_dim: 128
