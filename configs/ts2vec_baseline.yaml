@@ -12,7 +12,7 @@ data:
   target_h: 12
 
   #Entropy filtering setting
-  entropy_filter: True
+  entropy_filter: true
   entropy_q : 0.9 # Quantile threshold for entropy filtering, drop the 5% tails
   entropy_bins: 11
 
