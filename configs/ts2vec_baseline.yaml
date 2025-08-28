@@ -3,7 +3,7 @@ seed: 42
 data:
   csv_path: data/ABB_5minute_cleaned_features.csv
   time_col: "Unnamed: 0"
-  feature_cols: [open, high, low, close, volume, log_return, hl_range, tod_sin, tod_cos]
+  feature_cols: [open, high, low, close, volume, log_return, hl_range, tod_sin, tod_cos, ent_shannon]
   train_ratio: 0.70
   val_ratio: 0.15
   test_ratio: 0.15
@@ -13,7 +13,7 @@ data:
 
   #Entropy filtering setting
   entropy_filter: true
-  entropy_q : 0.9 # Quantile threshold for entropy filtering, drop the 5% tails
+  entropy_q : 0.9 # Quantile threshold for entropy filtering, drop the 10% tails
   entropy_bins: 11
 
 model:
@@ -24,12 +24,16 @@ model:
 train:
   batch_size: 16
   epochs: 10
-  lr: 0.001
+  lr: 0.002
   weight_decay: 0.0001
-  temperature: 0.3
+  temperature: 0.5
   mask_ratio: 0.2
   noise_std: 0.01
+  entropy_weighted: true
+  weight_clip: [0.5, 1.5] # Min and max weights for entropy weighting
   device: mps
 
 paths:
+  windows_root : outputs/windows_entropy_hybrid 
   out_dir: ./outputs/ts2vec_entropy
+  ckpt_name: ts2vec_entropy.ckpt
