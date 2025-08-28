@@ -4,7 +4,7 @@ data:
   csv_path: data/ABB_5minute_cleaned_features.csv
   time_col: "Unnamed: 0"
   feature_cols: [open, high, low, close, volume, log_return, hl_range, tod_sin, tod_cos]
-  train_ratio: 0.90
+  train_ratio: 0.70
   val_ratio: 0.15
   test_ratio: 0.15
   lin: 256
@@ -13,8 +13,7 @@ data:
 
   #Entropy filtering setting
   entropy_filtering: True
-  entropy_q = 0.7
-  entropy_bins: 11
+  entropy_q = 0.9
 
 model:
   hidden_dim: 256
