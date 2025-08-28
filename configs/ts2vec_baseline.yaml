@@ -4,7 +4,7 @@ data:
   csv_path: data/ABB_5minute_cleaned_features.csv
   time_col: "Unnamed: 0"
   feature_cols: [open, high, low, close, volume, log_return, hl_range, tod_sin, tod_cos]
-  train_ratio: 0.70
+  train_ratio: 0.90
   val_ratio: 0.15
   test_ratio: 0.15
   lin: 256
