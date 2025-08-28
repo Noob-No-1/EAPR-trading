@@ -12,8 +12,9 @@ data:
   target_h: 12
 
   #Entropy filtering setting
-  entropy_filtering: True
-  entropy_q = 0.9
+  entropy_filter: True
+  entropy_q : 0.9 # Quantile threshold for entropy filtering, drop the 5% tails
+  entropy_bins: 11
 
 model:
   hidden_dim: 256
@@ -31,4 +32,4 @@ train:
   device: mps
 
 paths:
-  out_dir: ./outputs/ts2vec_baseline
+  out_dir: ./outputs/ts2vec_entropy
